@@ -1,0 +1,77 @@
+#thankyou {
+    display: none;
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: hsl(218, 41%, 11%);
+    margin-top: 20px;
+  }
+
+
+
+ p{
+    color: grey;
+ }
+
+  .container {
+    display: flex;
+    position:relative;
+    width: 250px;
+    padding: 20px;
+    margin-top: 250px;
+    margin-left: 550px;
+    background-color: hsl(218, 41%, 11%);
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    font-family:'Overpass';
+    color: white;
+  }
+
+  #rating_start{
+    display: inline-block;
+  }
+  .attribution { 
+    position: absolute;
+    font-size: 11px; 
+    text-align: center;
+    margin-left: 500px;
+    margin-bottom: 500px; 
+    margin-bottom: 10px;
+}
+  .attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    line-height: 25px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: red;
+    text-align: center;
+}
+
+input[type="radio"] {
+    cursor: pointer;
+    opacity: 0;
+    width: 1rem;
+    height: 2em;
+    background-color: #fff;
+    position: absolute;
+
+  }
+
+  
+  input[type="radio"]:checked+label {
+    background-color: #FC7614;
+  }
+  
+  .radio {
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+
+  }
+  
