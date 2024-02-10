@@ -1,26 +1,40 @@
-    const ratingStart = document.getElementById('rating_start');
-    const x = document.getElementsByName('rating');
-    const y = document.getElementById('thankyou');
-    const thankYouConatiner = document.getElementById("results");
+        const ratingStart = document.getElementById('rating_start');
+        const x = document.getElementsByName('rating');
+        const y = document.getElementById('thankyou');
 
-    const submitButton = document.getElementById('submit');
+        const submitButton = document.getElementById('submit');
+        const backLink = document.getElementById('back');
+
+        let rating = "";
+
+        submitButton.addEventListener('click',myFunction);
+        backLink.addEventListener('click',backFunction);
+
+        function myFunction(event) {
+            event.preventDefault();
+      
+            for(i=0;i<x.length;i++){
+
+                if(x[i].checked){
+
+                    rating = x[i].value;
 
 
-    function myFunction() {
-        ratingStart.style.display = "none";
-        y.style.display = "block";
-    
-        for(i=0;i<x.length;i++){
+                    document.getElementById("results").innerHTML = `You selected ${x[i].value} out of 5`;
+                    ratingStart.style.display = "none";
+                    y.style.display = "block";
+                }
+                
 
-            if(x[i].checked){
-                rating = x[i].value;
-
-                document.getElementById("results").innerHTML = `You selected ${x[i].value} out of 5`;
-
+                
             }
 
+
+        }
+
+        function backFunction(event){
+            y.style.display = "none";
+            ratingStart.style.display = "block";
             
         }
 
-    
-    }
