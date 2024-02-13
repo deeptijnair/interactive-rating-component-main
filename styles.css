@@ -154,5 +154,12 @@ input[type="radio"] {
     background-color: whitesmoke;
     color:#FC7614
 }
+#error{
+    display:none;
+    padding:30px;
+    width: 100%;
+    background-color: hsl(218, 41%, 11%);
+    border-radius: 20px;
 
+}
   

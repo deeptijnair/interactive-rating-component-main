@@ -1,40 +1,47 @@
-        const ratingStart = document.getElementById('rating_start');
-        const x = document.getElementsByName('rating');
-        const y = document.getElementById('thankyou');
+            const ratingStart = document.getElementById('rating_start');
+            const rating = document.getElementsByName('rating');
+            const thankYouBlock = document.getElementById('thankyou');
 
-        const submitButton = document.getElementById('submit');
-        const backLink = document.getElementById('back');
+            const submitButton = document.getElementById('submit');
+            const backLink = document.getElementById('back');
+            const errorBlock = document.getElementById('error');
 
-        let rating = "";
+            let ratingValue = "";
 
-        submitButton.addEventListener('click',myFunction);
-        backLink.addEventListener('click',backFunction);
+            submitButton.addEventListener('click',myFunction);
+            backLink.addEventListener('click',backFunction);
 
-        function myFunction(event) {
-            event.preventDefault();
-      
-            for(i=0;i<x.length;i++){
+            function myFunction(event) {
+                event.preventDefault();
+        
+                for(let i=0; i < rating.length; i++){
 
-                if(x[i].checked){
+                    if(rating[i].checked){
+                        ratingValue = rating[i].value;
+                        document.getElementById("results").innerHTML = `You selected ${rating[i].value} out of 5`;
+                        errorBlock.style.display = "none";
+                        ratingStart.style.display = "none";
+                        thankYouBlock.style.display = "block";
+                        break;
+                        
+                    }
+                    else if(!rating[i].checked){
+                        ratingStart.style.display = "none";
+                        thankYouBlock.style.display = "none";
+                        errorBlock.style.display = 'block';
+                    }
+                                    
 
-                    rating = x[i].value;
-
-
-                    document.getElementById("results").innerHTML = `You selected ${x[i].value} out of 5`;
-                    ratingStart.style.display = "none";
-                    y.style.display = "block";
+                    
                 }
-                
 
-                
+
             }
 
-
-        }
-
-        function backFunction(event){
-            y.style.display = "none";
-            ratingStart.style.display = "block";
-            
-        }
+            function backFunction(event){
+                thankYouBlock.style.display = "none";
+                errorBlock.style.display = "none";
+                ratingStart.style.display = "block";
+                
+            }
 
